@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: super-secret
     env:
-      SUPER_SECRET: ${{ secrets.super-secret }}
+      SUPER_SECRET: ${{ secrets.SOFIA_SUPER_DUPER_SECRET }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
