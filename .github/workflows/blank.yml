@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      REPO_SECRET: ${{ secrets.REPOSITORY_SECRET }}
+      REPO_SECRET: ${{ secrets.REPO_SECRET }}
       ORG_SECRET: ${{ secrets.ORGANIZATION_SECRET }}
 
     steps:
