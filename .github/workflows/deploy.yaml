@@ -1,5 +1,4 @@
-name: GitHub Secrets Example
-
+name: Python stuff
 on:
   push:
     branches: [ "main" ]
