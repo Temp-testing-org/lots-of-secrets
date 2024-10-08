@@ -1,0 +1,21 @@
+name: GitHub Secrets Example
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      REPO_SECRET: ${{ secrets.REPOSITORY_SECRET }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: lint
+        uses: psf/black@stable
+        with:
+          options: "--check --verbose"
+          src: "./src"
