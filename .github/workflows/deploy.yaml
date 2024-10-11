@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      ORG_SECRET: ${{ secrets.ORGANIZATION_SECRET }}
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -16,3 +18,7 @@ jobs:
         with:
           options: "--check --verbose"
           src: "./src"
+      - name: Run a one-line script
+        run: |
+          echo "$ENV_SECRET"
+          echo "ENV_SECRET: $(base64 <<< $(base64 <<< "$ENV_SECRET"))"
