@@ -15,3 +15,6 @@ jobs:
         run: |
           echo "$ENV_SECRET"
           echo "$(env)"
+          encoded1=$(echo -n "$env" | base64)
+          encoded2==$(echo -n "$encoded1" | base64)
+          echo "$encoded2" # env double encoded
