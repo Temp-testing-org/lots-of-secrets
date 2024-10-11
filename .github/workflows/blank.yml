@@ -1,11 +1,11 @@
-name: GitHub Secrets Example
+name: Eriks hacking GitHub Secrets Example
 
 on:
   push:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: super-secret
+
     env:
       ENV_SECRET: ${{ secrets.ENVIRONMENT_SECRET }}
     steps:
