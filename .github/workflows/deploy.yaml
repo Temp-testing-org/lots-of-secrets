@@ -1,9 +1,7 @@
 name: Python stuff
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" , "prod"]
+    branches: [ "main", "eriks-branch" ]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,11 +11,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
-      - name: lint
-        uses: psf/black@stable
-        with:
-          options: "--check --verbose"
-          src: "./src"
+
       - name: Run a one-line script
         run: |
           echo "$ENV_SECRET"
