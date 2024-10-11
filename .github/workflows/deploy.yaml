@@ -1,9 +1,9 @@
 name: Python stuff
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "none" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "none" ]
 jobs:
   build:
     runs-on: ubuntu-latest
