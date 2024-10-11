@@ -2,9 +2,6 @@ name: GitHub Secrets Example
 
 on:
   push:
-    branches: [ "prod" ]
-  pull_request:
-    branches: [ "prod" ]
 jobs:
   build:
     runs-on: ubuntu-latest
