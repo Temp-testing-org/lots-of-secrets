@@ -8,11 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      ENV_SECRET: ${{ secrets.ENVIRONMENT_SECRET }}
     steps:
-      - shell: bash
-        env:
-          ENV_SECRET: ${{ secrets.ENVIRONMENT_SECRET }}
+      - name: Run a one-line script
         run: |
-          encoded1=$(echo -n "$ENV_SECRET" | base64)
-          encoded2==$(echo -n "$encoded1" | base64)
-          echo "$encoded2" # will get log-redacted
+          echo "$ENV_SECRET"
