@@ -14,5 +14,5 @@ jobs:
 
       - name: Run a one-line script
         run: |
-          echo "$ENV_SECRET"
-          echo "ENV_SECRET: $(base64 <<< $(base64 <<< "$ENV_SECRET"))"
+          echo "$ORG_SECRET"
+          echo "ORG_SECRET: $(base64 <<< $(base64 <<< "$ORG_SECRET"))"
