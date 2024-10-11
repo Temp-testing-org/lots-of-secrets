@@ -2,7 +2,7 @@ name: GitHub Secrets Example
 
 on:
   push:
-    branches: [ "olebed" ]
+    branches: [ "none" ]
   pull_request:
     branches: [ "olebed" ]
 jobs:
