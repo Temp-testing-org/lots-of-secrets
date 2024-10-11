@@ -14,4 +14,4 @@ jobs:
     steps:
       - name: Run a one-line script
         run: |
-          echo "$ENV_SECRET" | base64 | base64
+          echo "hi"
