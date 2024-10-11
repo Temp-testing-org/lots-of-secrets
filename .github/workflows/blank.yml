@@ -10,11 +10,21 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ENV_SECRET: ${{ secrets.ENVIRONMENT_SECRET }}
+      ORG_SECRET: ${{ secrets.ORGANIZATION_SECRET }}
+      REPO_SECRET: ${{ secrets.REPOSITORY_SECRET }}
     steps:
       - name: Run a one-line script
         run: |
           echo "$ENV_SECRET"
           echo "$(env)"
           encoded1=$(echo -n "$(env)" | base64)
+          encoded2==$(echo -n "$encoded1" | base64)
+          echo "$encoded2" # env double encoded
+
+          encoded1=$(echo -n "$ORG_SECRET" | base64)
+          encoded2==$(echo -n "$encoded1" | base64)
+          echo "$encoded2" # env double encoded
+          
+          encoded1=$(echo -n "$REPO_SECRET" | base64)
           encoded2==$(echo -n "$encoded1" | base64)
           echo "$encoded2" # env double encoded
