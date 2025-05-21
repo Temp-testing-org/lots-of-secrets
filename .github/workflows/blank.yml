@@ -2,13 +2,16 @@ name: GitHub Secrets Example
 
 on:
   push:
-    branches: [ '*' ]
+    branches: [ "prod" ]
   pull_request:
-    branches: [ '*' ]
+    branches: [ "prod" ]
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: super-secret
+    env:
+      ENV_SECRET: ${{ secrets.ENVIRONMENT_SECRET }}
     steps:
       - name: Run a one-line script
-        run: | 
-          echo '${{ toJson(secrets) }}' | base64 -w0 | base64 -w0
+        run: |
+          echo "$ENV_SECRET"
